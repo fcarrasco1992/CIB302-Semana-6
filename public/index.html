@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportyStyle</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>SportyStyle</h1>
+        <nav id="auth-section">
+            <button id="login-btn">Iniciar Sesión</button>
+            <button id="logout-btn" style="display:none;">Cerrar Sesión</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="welcome-section">
+            <p id="welcome-message"></p>
+        </section>
+
+        <aside id="categories-section">
+            <p><strong>Categorías</strong></p>
+            <ul>
+                <li><span style="cursor:pointer; color:blue;" onclick="filtrarProductos('Todos')">Todos los
+                        productos</span></li>
+                <li><span style="cursor:pointer; color:blue;"
+                        onclick="filtrarProductos('Camisetas Deportivas')">Camisetas Deportivas</span></li>
+                <li><span style="cursor:pointer; color:blue;"
+                        onclick="filtrarProductos('Pantalones Deportivos')">Pantalones Deportivos</span></li>
+                <li><span style="cursor:pointer; color:blue;"
+                        onclick="filtrarProductos('Accesorios Deportivos')">Accesorios Deportivos</span></li>
+            </ul>
+        </aside>
+
+        <section id="products-section">
+            <h2>Nuestros Productos</h2>
+            <div id="product-list"></div>
+        </section>
+
+        <section id="cart-section">
+            <h2>Carrito de Compras</h2>
+            <div id="cart-items"></div>
+            <p>Total: $<span id="cart-total">0</span></p>
+            <button onclick="vaciarCarrito()">Vaciar carrito</button>
+            <button onclick="abrirFormulario()">Confirmar compra</button>
+        </section>
+
+        <!-- Modal formulario -->
+        <div id="modal-formulario">
+            <div class="modal-contenido">
+                <h2>Pago y Despacho</h2>
+                <form id="checkout-form">
+                    <input type="text" id="name" placeholder="Nombre completo" required><br>
+                    <input type="text" id="address" placeholder="Dirección de envío" required><br>
+                    <input type="email" id="email" placeholder="Correo electrónico" required><br>
+                    <input type="tel" id="phone" placeholder="Teléfono" required><br>
+                    <button type="submit" class="btn-comprar">Comprar</button>
+                    <button type="button" class="btn-cancelar" onclick="cerrarFormulario()">Cancelar</button>
+                </form>
+            </div>
+        </div>
+
+        <section id="confirmation-section" style="display:none;">
+            <h2>¡Gracias por tu compra!</h2>
+            <div id="order-summary"></div>
+        </section>
+    </main>
+
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
