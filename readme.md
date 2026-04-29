@@ -20,5 +20,20 @@ Utilizamos `Session Storage` para mantener el estado del carrito durante la nave
 - [x] Formulario de pago con validaciones simples (correo electrónico y formato de teléfono).
 - [x] Persistencia de datos mediante Session Storage.
 
+## Cómo ejecutar el proyecto
+
+1. Clona el repositorio:
+   ```
+   git clone https://github.com/fcarrasco1992/CIB302-Semana-6.git
+   ```
+2. Instala las dependencias necesarias:
+   ```
+   npm install
+   ```
+3. Inicia el servidor:
+   ```
+   node server.js
+   ```
+
 ## Autor
 - Felipe Carrasco González
